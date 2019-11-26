@@ -1,0 +1,245 @@
+
+
+--- Day 1: Chronal Calibration ---
+
+Excel works until it doesn't; switch to Lua for Part 2
+
+--- Day 2: Inventory Management System ---
+
+Lua tables and string functions made it easy
+
+--- Day 3: No Matter How You Slice It ---
+
+string.gmatch wins
+dynamic sizing wins
+rectangle intersection isn't hard
+
+--- Day 4: Repose Record ---
+
+should have made comments
+off by one errors are a time sink
+Lua tables are nice
+Fun to resurrect that library
+
+--- Day 5: Alchemical Reduction ---
+
+Used fixed point reductions, whereas a stack with one pass works fine
+I solved the problem, but was not as clever as the winners
+
+--- Day 6: Chronal Coordinates ---
+
+Learned about Manhatten or "taxi" distance
+Otherwise, simple search problem
+
+--- Day 7: The Sum of Its Parts ---
+
+Topological sorting, nice refresher: Kahn's Algorithm 
+Lua's table.concat is nice
+function nonempty (t)
+    return next(t, nil)
+end
+simple job queue scheduler
+
+--- Day 8: Memory Maneuver ---
+
+Compressed/fasl'd tree, not a challenge
+
+--- Day 9: Marble Mania ---
+
+Lots of weird rules, otherwise not a challenge
+
+--- Day 10: The Stars Align ---
+
+require "ltk"
+Fun to resurrect that library
+Heuristic worked: advance until dense enough, then animate sprites
+
+--- Day 11: Chronal Charge ---
+
+Brute force worked but slow
+Redid part 2 with summed area table https://en.wikipedia.org/wiki/Summed-area_table
+Nice to learn about that, similar to 1-d convolution filter or optimized S_G filter
+
+--- Day 12: Subterranean Sustainability ---
+
+Game of Life
+Visualization helps
+Stumbled on not widening playing field fast enough, otherwise no problem
+Some solutions on reddit were more elegant than my (working) kludge
+
+--- Day 13: Mine Cart Madness ---
+
+Fun problem. 
+Should have used 1-char strings instead of char-bytes, which  led to more typing than necessary
+Clever solutions on reddit used complex numbers rather than x,y coordinates, 
+but I'm not chagrined, the Lua table transforms worked well without complex math.
+
+--- Day 14: Chocolate Charts ---
+
+Part 1 was piece of cake
+Part 2 cost me much more time debugging than I would have liked. 
+So, I grabbed a simple Python solution which didn't help find my bug, but at least gave me an
+answer I could use to confirm when my code was finally working. 
+In the end I discovered that the test I added for Part 2 was misplaced (it was at the end of
+a major loop, so missed digits added within the loop, giving a 50/50 chance of missing the 
+termination condition). My debug analysis revealed that the "optimized" test for termination 
+was also not general, though it worked for my input. Bad day.
+
+--- Day 15: Beverage Bandits ---
+
+A horror show of a challenge... the rules were way too complicated. 
+In a rush to finish this I abandoned a N*ln(N) shortest path function for N*N*N FloydWarshall
+when I realized that I'd need several paths to test.  When I later realized that the search 
+would have to be redone after every unit moved, I didn't go back to Dijkstra.
+This worked fine for Part 1. Part 2 would have taken all night with FloydWarshall.
+I realized that running two Dijkstra in the source->target and target->source directions would
+give all the info needed for one unit step -- 2*N*ln(N) compared with N*N*N.
+Finally solved it at 1:50AM -- that's 26 hours not 2. (I didn't start at midnight!)
+
+--- Day 16: Chronal Classification ---
+
+Processor simulator.
+I misread part 1 objective, but ended up solving most of part 2 while coding part 1.
+Face palm.
+Overall fun and not too time consuming.
+Wrote set intersect and difference using Lua tables; not hard.
+
+--- Day 17: Reservoir Research ---
+
+Shoulda used a recursive solver, but chose a work queue... worked out ok
+Needed a hint; from the 1st solution on reddit: "I only had one real bug after I fixed the 
+compile errors, which was subtracting 1 instead of min_y from the total count (which counts 
+some spring water that shouldn't have been)." I had the same bug, once I fixed that Part 1
+was correct.
+Bug leaves two measly squares '|' instead of '~' -- doesn't affect part 1, but had to visually
+inspect and adjust by 2 for part 2
+Later fixed code to get correct answer... it's fast enough, but lots of special cases
+
+--- Day 18: Settlers of The North Pole ---
+
+Cellular automata, fun to code. Finding the limit cycle took a few minutes and human inspection
+of the program outputs.
+
+--- Day 19: Go With The Flow ---
+
+Part 1 easy update to 16. Part 2 required reverse engineering the asm code, and I did not
+feel like doing it, so I cheated and read the hints on reddit, and solve in a one liner.
+
+--- Day 20: A Regular Map ---
+
+Easy with tools created in past days: minheap, Dijkstra, etc. However, the solution, though it
+gave the correct answers to both parts, has a bug common to all of the "stack based" solutions
+as described in the subreddit: not all paths are generated if they don't happen to overlap.
+https://www.reddit.com/r/adventofcode/comments/a7w4dj/2018_day_20_why_does_this_work/ec6jhk9
+
+In python solution I found this cute:
+        x += (char == 'E') - (char == 'W')
+        y += (char == 'S') - (char == 'N')
+
+--- Day 21: Chronal Conversion ---
+
+Not a lot of fun, and it took me hours. Reverse engineer the asm code, simulate in Lua, 
+look for repeat, and go back one. Ugh.
+
+--- Day 22: Mode Maze ---
+
+This was fun. I didn't actually materialze the maze, though I did create a summed area table
+in part 1 assuming it would be needed in part 2 (it wasn't!). I made a couple mistakes that 
+slowed me down: forgot to clear the cache used for the dynamic programming after unit testing.
+I also misread the problem and had to adjust my cost table to prevent tool changes that are not 
+compatible with the source location (I assumed you could change tools "in between" locations). 
+If I'd separated the tool change steps and the motion steps this would have been simpler code, 
+but my solution is optimal... The last issue, discoved with the example problem, is that with
+my "move and tool change in one step" solution, I need a special case at the end to change the
+tool and not move.
+
+--- Day 23: Experimental Emergency Teleportation ---
+
+Part 1 was easy. Part 2 was too hard for me to do on a Sunday afternoon. So, after a couple
+hours I cheated, and translated a Python "binary search with big boxes down to small ones" 
+solution to Lua.
+
+It turns out this solution is not always correct. E.g.,
+pos=<1,1,1>, r=3
+pos=<2,2,2>, r=6
+part 2 answer should be 0 right? Your calc2 returns 3...
+>>>
+It is easy to fix this, the first iteration should start with min X = 0, min Y = 0 and min Z = 0
+>>>
+Right you are. I assume 0,0,0 is in the range of the sample inputs, but if it's not, the rules 
+still say it's a valid option. I've fixed up my solution in the post above account for this case.
+
+another edge case:
+pos=<1,1,1>, r=1
+pos=<1000,1000,1000>, r=9999
+pos=<101,100,100>, r=1
+pos=<100,101,100>, r=1
+pos=<100,100,101>, r=1
+best location should be <100,100,100> with 4 count. Or 3 count if r=9 instead of 9999.
+>>>
+That's interesting. I'll take a deeper look to see what's going on.
+
+I tried intersecting sets. It's ugly with these taxi distances (integer programming rather than 
+3D vectors). Note this configuration:
+(0,0,1)
+(0,1,0)
+(1,0,0)
+(1,1,1)
+each with radius 1. These overlap pairwise and tripletwise, but there's no integer point inside 
+all 4 volumes.
+
+Bron–Kerbosch algorithm may lead to a general solution.
+
+--- Day 24: Immune System Simulator 20XX ---
+
+Time consuming due to all the rules. No bugs in part 1, except that I didn't eliminate groups
+with no units during the selection phase. Discovered that with the verbose output. Part 2 
+was easy once I understood what a boost really did... the example output was essential.
+Found my answer 2444 by looking through the original dribble file produced by non-terminating
+binary search -- the scores are not monotonic by boost, So re-did code for linear search, but 
+got stuck in deadlock battle w/ boost 54! Added "timeout" in part2a, and finished quickly (at 
+55, score 2444).
+
+
+--- Day 25: Four-Dimensional Adventure ---
+
+Brushed off union-find algorithm ... worked first time (didn't even try the examples)!
+Part II was a gift, adventure style "slay the dragon."
+
+      --------Part 1--------   --------Part 2--------
+Day       Time   Rank  Score       Time   Rank  Score
+ 25   12:12:12   1831      0   12:12:46   1148      0
+ 24   14:11:27   1288      0   15:36:14   1237      0
+ 23   09:55:57   2435      0   16:17:15   1070      0
+ 22   12:24:41   2293      0   17:54:54   1532      0
+ 21   11:52:52   1847      0   17:19:17   1852      0
+ 20   13:55:16   1581      0   13:57:22   1480      0
+ 19   13:33:18   2848      0   15:24:02   2104      0
+ 18   14:10:10   3469      0   14:32:00   3119      0
+ 17   19:15:44   2101      0   19:19:59   2083      0
+ 16   14:13:41   3132      0   14:44:25   2843      0
+ 15       >24h   2096      0       >24h   1932      0
+ 14   12:39:40   4803      0   14:02:20   4350      0
+ 13   18:30:41   5033      0   20:40:35   4611      0
+ 12   11:49:03   5163      0   13:33:06   4422      0
+ 11   10:56:44   6454      0   13:59:56   6109      0
+ 10   14:22:54   6369      0   14:38:34   6416      0
+  9   13:57:29   6457      0   16:24:33   5965      0
+  8   11:05:33   5908      0   11:17:57   5471      0
+  7   13:16:58   7609      0   14:22:49   5414      0
+  6   11:58:59   6715      0   12:12:13   6182      0
+  5   11:44:39  11016      0   12:15:36  10306      0
+  4   18:43:39  12208      0   20:30:52  12095      0
+  3   13:20:52  12091      0   13:47:48  11171      0
+  2   13:59:10  17444      0   14:18:48  15153      0
+  1       >24h  28438      0       >24h  24695      0
+
+
+
+
+
+
+
+
+
+

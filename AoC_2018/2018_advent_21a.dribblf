@@ -1,0 +1,80 @@
+[11521639,        1,        1,        1,  9566170,       28]
+Part1: regs[4] is 9566170 after 1846 instructions at ip = 28
+[11521639,        1,        1,      145, 11600695,       28]
+Part1: regs[4] is 11600695 after 264475 instructions at ip = 28
+[11521639,        1,        1,      177, 14045034,       28]
+Part1: regs[4] is 14045034 after 582964 instructions at ip = 28
+[11521639,        1,        1,      215,  1390785,       28]
+Part1: regs[4] is 1390785 after 970347 instructions at ip = 28
+[11521639,        1,        1,       21,  9488193,       28]
+Part1: regs[4] is 9488193 after 1008563 instructions at ip = 28
+[11521639,        1,        1,      145,  4772588,       28]
+Part1: regs[4] is 4772588 after 1270856 instructions at ip = 28
+[11521639,        1,        1,       73,  8894008,       28]
+Part1: regs[4] is 8894008 after 1403698 instructions at ip = 28
+[11521639,        1,        1,      135, 12244874,       28]
+Part1: regs[4] is 12244874 after 1647882 instructions at ip = 28
+[11521639,        1,        1,      187,  5639605,       28]
+Part1: regs[4] is 5639605 after 1985845 instructions at ip = 28
+[11521639,        1,        1,       87,  5266400,       28]
+Part1: regs[4] is 5266400 after 2142494 instructions at ip = 28
+[11521639,        1,        1,       81, 15477165,       28]
+Part1: regs[4] is 15477165 after 2288895 instructions at ip = 28
+[11521639,        1,        1,      237,  6330934,       28]
+Part1: regs[4] is 6330934 after 2715590 instructions at ip = 28
+[11521639,        1,        1,       97, 15375558,       28]
+Part1: regs[4] is 15375558 after 2891216 instructions at ip = 28
+[11521639,        1,        1,      235, 14767254,       28]
+Part1: regs[4] is 14767254 after 3315118 instructions at ip = 28
+[11521639,        1,        1,      225,  2962128,       28]
+Part1: regs[4] is 2962128 after 3720526 instructions at ip = 28
+[11521639,        1,        1,       45, 14795216,       28]
+Part1: regs[4] is 14795216 after 3801876 instructions at ip = 28
+[11521639,        1,        1,      225,  4212323,       28]
+Part1: regs[4] is 4212323 after 4208047 instructions at ip = 28
+[11521639,        1,        1,       65, 12862793,       28]
+Part1: regs[4] is 12862793 after 4325517 instructions at ip = 28
+[11521639,        1,        1,      197, 15899982,       28]
+Part1: regs[4] is 15899982 after 4680448 instructions at ip = 28
+[11521639,        1,        1,      243,  8002495,       28]
+Part1: regs[4] is 8002495 after 5118749 instructions at ip = 28
+[11521639,        1,        1,      123,  7688264,       28]
+Part1: regs[4] is 7688264 after 5340260 instructions at ip = 28
+[11521639,        1,        1,      117, 15035774,       28]
+Part1: regs[4] is 15035774 after 5551348 instructions at ip = 28
+[11521639,        1,        1,      229, 13948101,       28]
+Part1: regs[4] is 13948101 after 5964127 instructions at ip = 28
+[11521639,        1,        1,      213,   455049,       28]
+Part1: regs[4] is 455049 after 6348843 instructions at ip = 28
+[11521639,        1,        1,        7,  9206000,       28]
+Part1: regs[4] is 9206000 after 6363168 instructions at ip = 28
+[11521639,        1,        1,      141, 15635174,       28]
+Part1: regs[4] is 15635174 after 6617712 instructions at ip = 28
+[11521639,        1,        1,      239,  1100136,       28]
+Part1: regs[4] is 1100136 after 7048740 instructions at ip = 28
+[11521639,        1,        1,       17,  3519363,       28]
+Part1: regs[4] is 3519363 after 7080775 instructions at ip = 28
+[11521639,        1,        1,       53,  5039978,       28]
+Part1: regs[4] is 5039978 after 7177420 instructions at ip = 28
+[11521639,        1,        1,       77, 13374187,       28]
+Part1: regs[4] is 13374187 after 7317605 instructions at ip = 28
+[11521639,        1,        1,      205,   363089,       28]
+Part1: regs[4] is 363089 after 7686571 instructions at ip = 28
+[11521639,        1,        1,        5,  9513859,       28]
+Part1: regs[4] is 9513859 after 7696577 instructions at ip = 28
+[11521639,        1,        1,      145, 15202198,       28]
+Part1: regs[4] is 15202198 after 7957778 instructions at ip = 28
+[11521639,        1,        1,      231, 12384029,       28]
+Part1: regs[4] is 12384029 after 8375121 instructions at ip = 28
+[11521639,        1,        1,      189,  4626516,       28]
+Part1: regs[4] is 4626516 after 8716906 instructions at ip = 28
+[11521639,        1,        1,       71, 11682864,       28]
+Part1: regs[4] is 11682864 after 8845744 instructions at ip = 28
+[11521639,        1,        1,      179,  9370868,       28]
+Part1: regs[4] is 9370868 after 9168286 instructions at ip = 28
+[11521639,        1,        1,      143,  6647404,       28]
+Part1: regs[4] is 6647404 after 9427352 instructions at ip = 28
+[11521639,        1,        1,      101, 13935656,       28]
+Part1: regs[4] is 13935656 after 9609866 instructions at ip = 28
+[11521639,        1,        1,      213,  9129970,       28]
+Part1: regs[4] is 9129970 after 9994246 instructions at ip = 28
