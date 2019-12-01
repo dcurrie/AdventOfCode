@@ -2,3 +2,6 @@ nimcache/
 .DS_Store
 scrap/
 *.so
+p1
+Utils/daryheap
+Utils/daryheap.html
