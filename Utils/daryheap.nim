@@ -19,8 +19,8 @@
   The `daryheap` maintains a heap of reference objects; the index of each reference object
   in the heap is maintained in the object's `index` field. This facilitates use with the 
   Dijkstra shortest path graph algorithm, which needs the index in constant time for the
-  `decrease-priority` operation.
-  
+  `decr` decrease-priority operation.
+
   Basic usage
   -----------
   .. code-block:: Nim
@@ -126,6 +126,16 @@ proc push*[T](heap: var DaryHeap[T], item: T) =
   ## Push `item` onto heap, maintaining the heap invariant.
   heap.data.add(item)
   siftdown(heap, 0, len(heap)-1)
+
+proc decr*[T](heap: var DaryHeap[T], item: T) = 
+  ## Decrease-priority of `item`, or push it if it's not in the heap.
+  ## Caller lowered the `priority` field of `item`.
+  let pos = item.index
+  # use unsigned compare for 0 <= pos and pos < heap.len
+  if pos <% heap.len and heap.data[pos] == item: 
+    siftdown(heap, 0, pos)
+  else:
+    push(heap, item)
 
 proc pop*[T](heap: var DaryHeap[T]): T =
   ## Pop and return the smallest item from `heap`,
@@ -283,3 +293,27 @@ when isMainModule:
 
     heap.del(0)
     doAssert(heap.toSortedSeq == @[])
+
+  block: # Test decr
+    var heap = initDaryHeap[GNode](4)
+    var c = GNode(priority: 7)
+    var b = GNode(priority: 5)
+    var a = GNode(priority: 3)
+    heap.decr(a)
+    heap.decr(b)
+    heap.decr(c)
+    doAssert(heap.toSortedSeq == @[3, 5, 7])
+    b.priority = 1
+    heap.decr(b)
+    doAssert(heap.toSortedSeq == @[1, 3, 7])
+    c.priority = 2
+    heap.decr(c)
+    doAssert(heap.toSortedSeq == @[1, 2, 3])
+    b.priority = 0
+    heap.decr(b)
+    doAssert(heap.toSortedSeq == @[0, 2, 3])
+    var d = heap.pop()
+    doAssert(heap.toSortedSeq == @[2, 3])
+    heap.decr(b)
+    doAssert(heap.toSortedSeq == @[0, 2, 3])
+
