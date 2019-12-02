@@ -4,3 +4,9 @@
 
 Overcome some Nim syntax misunderstandings. Read the problem statement more carefully.
 
+--- Day 2: 1202 Program Alarm ---
+
+Implement a simple VM...
+Figured out Nim `seq` and `openarray` semantics; found string.split().
+After that it was easy using brute force for part 2.
+

@@ -4,4 +4,5 @@ scrap/
 *.so
 p1
 Utils/daryheap
+Utils/dgraph
 Utils/daryheap.html
