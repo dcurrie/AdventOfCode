@@ -1,0 +1,6 @@
+
+
+--- Day 1: The Tyranny of the Rocket Equation ---
+
+Overcome some Nim syntax misunderstandings. Read the problem statement more carefully.
+
