@@ -10,3 +10,11 @@ Implement a simple VM...
 Figured out Nim `seq` and `openarray` semantics; found string.split().
 After that it was easy using brute force for part 2.
 
+--- Day 3: Crossed Wires ---
+
+Bogged down with line segment intesection... used a general solution for "fun" despite the 
+simplicity of horz. & vert. lines only. Bogged down with a logic error in part 2 (left loop 
+early thinking I needed the min for each path separately despite the challenge being worded 
+quite clearly). Nim documentation was good, but hard to navigate; I often knew exactly what 
+I wanted but couldn't find the right module. Why isn't `zip` general?
+
