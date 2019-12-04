@@ -4,27 +4,27 @@ import hashes, sets, tables # sequtils,
 
 type 
   DEdge*[K, V] = ref object
-    fm: DNode[K]
-    to: DNode[K]
-    weight: V
+    fm*: DNode[K]
+    to*: DNode[K]
+    weight*: V
 
   DNode*[K, V] = ref object
-    key: K
+    key*: K
     outedges: HashSet[DEdge[K, V]]
     inedges:  HashSet[DEdge[K, V]]
-    priority: V # for algorithms to sort upon
-    index: int  # for algorithms to store sort position
+    priority*: V # for algorithms to sort upon
+    index*: int  # for algorithms to store sort position
 
   DGraph*[K, V] = object
     # A directed graph of nodes and directed edges
     nodes: Table[K, DNode[K, V]]
 
-proc hash[K, V](x: DNode[K, V]): Hash =
+proc hash*[K, V](x: DNode[K, V]): Hash =
   var h: Hash = 0
   h = h !& hash(x.key)
   result = !$h
 
-proc hash[K, V](x: DEdge[K, V]): Hash =
+proc hash*[K, V](x: DEdge[K, V]): Hash =
   var h: Hash = 0
   h = h !& hash(x.fm)
   h = h !& hash(x.to)
@@ -86,8 +86,17 @@ proc add_edges*[K, V](graph: var DGraph[K, V], edges: seq[(K,K,V,)]): seq[DEdge[
   # Error: 'graph' is of type <var DGraph[system.int, system.float]> which cannot
   # be captured as it would violate memory safety
   # edges.map(proc (x: (K,K,V,)): DEdge[K, V] = add_edge(graph, x[0], x[1], x[2]))
-  for x in edges:
-    result.add(add_edge(graph, x[0], x[1], x[2]))
+  for (n1, n2, w) in edges:
+    result.add(add_edge(graph, n1, n2, w))
+
+# for algos such as daryheap and dijkstra
+#
+
+proc `<`*(a, b: DNode): bool = a.priority < b.priority
+
+proc `index=`*(x: var DNode, value: int) {.inline.} =
+    x.index = value
+
 
 when isMainModule:
 
