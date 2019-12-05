@@ -38,7 +38,7 @@ proc dijkstra*[K, V](graph: var DGraph[K, V], source: K): (Table[K, V], Table[K,
     for node in graph.allnodes: node.index = -1 # not in pque
 
     dist[source] = 0
-    var snode = graph.add_node(source) # should already be there!
+    var snode = graph[source]
     snode.priority = 0
     pque.push(snode)
     while pque.len > 0:

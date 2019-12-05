@@ -85,7 +85,7 @@ proc add_nodes*[K, V](graph: var DGraph[K, V], nodes: seq[K]): seq[DNode[K, V]] 
   for x in nodes:
     result.add(add_node(graph, x))
 
-proc add_edge*[K, V](graph: var DGraph[K, V], fm: K, to: K, weight: V = 1): DEdge[K, V] =
+proc add_edge*[K, V](graph: var DGraph[K, V], fm: K, to: K, weight: V = V(1)): DEdge[K, V] =
   var n1 = graph.add_node(fm)
   var n2 = graph.add_node(to)
   result = DEdge[K, V](fm: n1, to: n2, weight: weight)
