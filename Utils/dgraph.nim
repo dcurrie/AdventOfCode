@@ -54,12 +54,22 @@ iterator outedges*[K, V](graph: DGraph[K, V], key: K): DEdge[K, V] =
   for e in graph.nodes[key].outedges:
     yield e
 
+iterator outedges*[K, V](node: DNode[K, V]): DEdge[K, V] =
+  for e in node.outedges:
+    yield e
+
 iterator inedges*[K, V](graph: DGraph[K, V], key: K): DEdge[K, V] =
   for e in graph.nodes[key].inedges:
     yield e
 
+proc indegree*[K, V](node: DNode[K, V]): int =
+  return node.inedges.len
+
 proc indegree*[K, V](graph: DGraph[K, V], key: K): int =
   return graph.nodes[key].inedges.len
+
+proc outdegree*[K, V](node: DNode[K, V]): int =
+  return node.outedges.len
 
 proc outdegree*[K, V](graph: DGraph[K, V], key: K): int =
   return graph.nodes[key].outedges.len
@@ -96,6 +106,8 @@ proc `<`*(a, b: DNode): bool = a.priority < b.priority
 
 proc `index=`*(x: var DNode, value: int) {.inline.} =
     x.index = value
+
+proc `[]`*[K, V](graph: DGraph[K, V], key: K): DNode[K, V] = graph.nodes[key]
 
 
 when isMainModule:

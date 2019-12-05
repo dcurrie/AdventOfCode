@@ -18,3 +18,10 @@ early thinking I needed the min for each path separately despite the challenge b
 quite clearly). Nim documentation was good, but hard to navigate; I often knew exactly what 
 I wanted but couldn't find the right module. Why isn't `zip` general?
 
+--- Day 4: Secure Container ---
+
+The hardest task in part 1 was figuring out Nim syntax for integer modulo and divide (it's infix 
+`mod` and `div`). Part 2 took two tries because I overlooked a case that wasn't covered by the
+examples: a pair followed by a larger group. That cost a couple minutes to suss out, but overall
+a pretty easy day.
+

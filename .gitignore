@@ -6,4 +6,6 @@ p1
 Utils/daryheap
 Utils/dijkstra
 Utils/dgraph
+Utils/dfssort
+Utils/kahnsort
 Utils/daryheap.html

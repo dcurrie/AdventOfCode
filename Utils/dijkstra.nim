@@ -35,15 +35,16 @@ proc dijkstra*[K, V](graph: var DGraph[K, V], source: K): (Table[K, V], Table[K,
     var prev: Table[K, K]
     var pque = initDaryHeap[DNode[K,V]](4)
 
+    for node in graph.allnodes: node.index = -1 # not in pque
+
     dist[source] = 0
     var snode = graph.add_node(source) # should already be there!
     snode.priority = 0
     pque.push(snode)
-    #for node in graph.nodes:
     while pque.len > 0:
         var u = pque.pop()
         let d = u.priority # == dist[u.key]
-        for e in graph.outedges(u.key): # could optimize with outedges iterator that takes node
+        for e in u.outedges():
             var v = e.to
             let alt = d + e.weight
             if not dist.hasKey(v.key) or alt < dist[v.key]:
@@ -57,7 +58,7 @@ proc dijkstra*[K, V](graph: var DGraph[K, V], source: K): (Table[K, V], Table[K,
 when isMainModule:
 
     block: # https://www.techiedelight.com/single-source-shortest-paths-dijkstras-algorithm/
-        var w = DGraph[int,int]()  # NG?
+        var w = DGraph[int,int]()
         let _ = w.add_edges(@[(0, 1, 10), (0, 4, 3), (1, 2, 2), (1, 4, 4), (2, 3, 9),
                               (3, 2, 7), (4, 1, 1), (4, 2, 8), (4, 3, 2)])
         let (dist, prev) = w.dijkstra(0)
@@ -85,6 +86,16 @@ when isMainModule:
 #        doAssert(dist[5] == 8.0)
 #        doAssert(prev[5] == 4)
 #        doAssert(prev[4] == 3)
+
+    block: # basic tests
+        var g = DGraph[uint,float]()
+        let _ = g.add_edges(@[(3u,4u,3.5),(4u,5u,4.5)])
+        let (dist, prev) = g.dijkstra(3u)
+        doAssert(dist[3u] == 0.0)
+        doAssert(dist[4u] == 3.5)
+        doAssert(dist[5u] == 8.0)
+        doAssert(prev[5u] == 4u)
+        doAssert(prev[4u] == 3u)
 
     block: # https://brilliant.org/wiki/dijkstras-short-path-finder/
         var g = DGraph[char,int]()
