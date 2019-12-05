@@ -3,6 +3,8 @@ nimcache/
 scrap/
 *.so
 p1
+p2
+dribble.txt
 Utils/daryheap
 Utils/dijkstra
 Utils/dgraph
