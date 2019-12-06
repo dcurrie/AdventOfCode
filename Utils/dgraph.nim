@@ -62,6 +62,10 @@ iterator inedges*[K, V](graph: DGraph[K, V], key: K): DEdge[K, V] =
   for e in graph.nodes[key].inedges:
     yield e
 
+iterator inedges*[K, V](node: DNode[K, V]): DEdge[K, V] =
+  for e in node.inedges:
+    yield e
+
 proc indegree*[K, V](node: DNode[K, V]): int =
   return node.inedges.len
 
