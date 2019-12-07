@@ -1,4 +1,6 @@
 
+# Advent of Code 2019 -- e
+
 ## Notes
 
 ### Day 1: The Tyranny of the Rocket Equation ###
@@ -28,6 +30,11 @@ This is the day that I learned that `var int` args are passed by reference by Ni
 
 Investment in dgraph data structure paid off! Punted implementing Tarjan's off-line lowest common ancestors algorithm in Nim and just used a hash table.
 
+### Day 7: Amplification Circuit ###
+
+Today I learned to slow down and when copying code from an earlier day's solution to be sure to get the later version with the fixes... I copied p1 from Day 5 instead of p2, and debugged the  `var int` arg problem again... this time it was much easier, but still a time waster. I got a late start (family day) and the part 2 description was unclear, but the examples helped. It's nice that Nim has `nextPermutation` built into the standard library.
+
+---
 
 ## Stats
 
@@ -35,12 +42,14 @@ Note: the times are from midnight EST; the challenges come out at midnight, but 
 
 These are your personal leaderboard statistics. Rank is your position on that leaderboard: 1 means you were the first person to get that star, 2 means the second, 100 means the 100th, etc. Score is the number of points you got for that rank: 100 for 1st, 99 for 2nd, ...
 
-##    --------Part 1--------   --------Part 2--------
+```
+      --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  7   16:43:19  11188      0   17:32:58   7666      0
   6   10:59:28  11463      0   11:30:06  10315      0
   5   12:25:38  11095      0   13:49:33  10334      0
   4   11:23:21  18459      0   11:42:14  16259      0
   3   15:05:14  16815      0   16:08:25  14676      0
   2   12:20:39  20141      0   12:34:13  17294      0
   1   09:45:44  13415      0   09:56:30  11936      0
-
+```
