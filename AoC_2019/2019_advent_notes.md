@@ -15,7 +15,7 @@ After that it was easy using brute force for part 2.
 
 ### Day 3: Crossed Wires ###
 
-Bogged down with line segment intesection... used a general solution for "fun" despite the simplicity of horz. & vert. lines only. Bogged down with a logic error in part 2 (left loop early thinking I needed the min for each path separately despite the challenge being worded quite clearly). Nim documentation was good, but hard to navigate; I often knew exactly what 
+Bogged down with line segment intersection... used a general solution for "fun" despite the simplicity of horz. & vert. lines only. Bogged down with a logic error in part 2 (left loop early thinking I needed the min for each path separately despite the challenge being worded quite clearly). Nim documentation was good, but hard to navigate; I often knew exactly what 
 I wanted but couldn't find the right module. Why isn't `zip` general?
 
 ### Day 4: Secure Container ###
@@ -34,6 +34,10 @@ Investment in dgraph data structure paid off! Punted implementing Tarjan's off-l
 
 Today I learned to slow down and when copying code from an earlier day's solution to be sure to get the later version with the fixes... I copied p1 from Day 5 instead of p2, and debugged the  `var int` arg problem again... this time it was much easier, but still a time waster. I got a late start (family day) and the part 2 description was unclear, but the examples helped. It's nice that Nim has `nextPermutation` built into the standard library.
 
+### Day 8: Space Image Format ###
+
+Pressed for time, I decided to use strings and explicit index computation instead of sussing out Nim 2D arrays. In the process I searched for a few minutes for `substring` before realizing that string slices was the Nim way. 
+
 ---
 
 ## Stats
@@ -45,6 +49,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  8   09:48:19  10092      0   10:09:50   9331      0
   7   16:43:19  11188      0   17:32:58   7666      0
   6   10:59:28  11463      0   11:30:06  10315      0
   5   12:25:38  11095      0   13:49:33  10334      0
