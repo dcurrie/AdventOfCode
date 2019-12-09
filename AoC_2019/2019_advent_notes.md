@@ -38,6 +38,10 @@ Today I learned to slow down and when copying code from an earlier day's solutio
 
 Pressed for time, I decided to use strings and explicit index computation instead of sussing out Nim 2D arrays. In the process I searched for a few minutes for `substring` before realizing that string slices was the Nim way. 
 
+### Day 9: Sensor Boost ###
+
+Refactored the vm to be an object. All my troubles today, few that there were, were Nim related. It took a few minutes to find `setLen` for adjusting vm memory size. The syntax for object initialization always feels wrong to me (why ':' characters, isn't that for types, not values!?). Why do large `int` literals not work when parseInt accepts them just fine!? I fought that for several minutes before I realized that inputting the IntCode program as text rather than as a sequence of literals solved the problem (which is how the solution worked anyway, only the test input was broken!).
+
 ---
 
 ## Stats
@@ -49,6 +53,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  9   15:55:44   8837      0   15:56:35   8741      0
   8   09:48:19  10092      0   10:09:50   9331      0
   7   16:43:19  11188      0   17:32:58   7666      0
   6   10:59:28  11463      0   11:30:06  10315      0
