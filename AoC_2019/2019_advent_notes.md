@@ -42,6 +42,10 @@ Pressed for time, I decided to use strings and explicit index computation instea
 
 Refactored the vm to be an object. All my troubles today, few that there were, were Nim related. It took a few minutes to find `setLen` for adjusting vm memory size. The syntax for object initialization always feels wrong to me (why ':' characters, isn't that for types, not values!?). Why do large `int` literals not work when parseInt accepts them just fine!? I fought that for several minutes before I realized that inputting the IntCode program as text rather than as a sequence of literals solved the problem (which is how the solution worked anyway, only the test input was broken!).
 
+### Day 10: Monitoring Station ###
+
+Embarrassed that I had to figure out rotation of coordinates by trial and error. Learned about how Nim handles sort, deletion from sequences using `keepItIf` (is there an easier way?), and how it names `arctan2`. Reused collinear calculation from day 3.  N-cubed solution seems fast enough.
+
 ---
 
 ## Stats
@@ -53,6 +57,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 10   10:49:04   6720      0   13:51:06   5115      0
   9   15:55:44   8837      0   15:56:35   8741      0
   8   09:48:19  10092      0   10:09:50   9331      0
   7   16:43:19  11188      0   17:32:58   7666      0
