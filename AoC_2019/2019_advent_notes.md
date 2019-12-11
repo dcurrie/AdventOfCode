@@ -46,6 +46,10 @@ Refactored the vm to be an object. All my troubles today, few that there were, w
 
 Embarrassed that I had to figure out rotation of coordinates by trial and error. Learned about how Nim handles sort, deletion from sequences using `keepItIf` (is there an easier way?), and how it names `arctan2`. Reused collinear calculation from day 3.  N-cubed solution seems fast enough.
 
+### Day 11: Space Police ###
+
+Easy peasy... didn't even use the test cases... a little stumbling around with Nim syntax; use of a hash table was the right decision. 
+
 ---
 
 ## Stats
@@ -57,6 +61,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 11   12:52:11   6387      0   13:16:19   6192      0
  10   10:49:04   6720      0   13:51:06   5115      0
   9   15:55:44   8837      0   15:56:35   8741      0
   8   09:48:19  10092      0   10:09:50   9331      0
