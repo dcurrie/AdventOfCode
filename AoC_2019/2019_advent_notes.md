@@ -50,6 +50,10 @@ Embarrassed that I had to figure out rotation of coordinates by trial and error.
 
 Easy peasy... didn't even use the test cases... a little stumbling around with Nim syntax; use of a hash table was the right decision. 
 
+### Day 12: The N-Body Problem ###
+
+I had this completely solved (part 1 implemented, part 2 in my head), part 2 first by brute force, then realizing the axes were independent. Unfortunately, I had a logic bug in my termination condition, so I thought it was compute or memory bound, but in fact the algorithm was fine. I went onto reddit for the first time this season for hints, only to confirm that I was using the right approach. Once I found my logic bug the code ran in well under a second. 
+
 ---
 
 ## Stats
@@ -61,6 +65,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 12   11:36:20   7303      0   14:19:43   5029      0
  11   12:52:11   6387      0   13:16:19   6192      0
  10   10:49:04   6720      0   13:51:06   5115      0
   9   15:55:44   8837      0   15:56:35   8741      0
