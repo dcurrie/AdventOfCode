@@ -54,6 +54,10 @@ Easy peasy... didn't even use the test cases... a little stumbling around with N
 
 I had this completely solved (part 1 implemented, part 2 in my head), part 2 first by brute force, then realizing the axes were independent. Unfortunately, I had a logic bug in my termination condition, so I thought it was compute or memory bound, but in fact the algorithm was fine. I went onto reddit for the first time this season for hints, only to confirm that I was using the right approach. Once I found my logic bug the code ran in well under a second. 
 
+### Day 13: Care Package ###
+
+Part 1 was a piece of cake using day 11 code. Part 2 required displaying the world at the start to see where the walls are (not at the bottom!) and running the vm twice: once with instrumentation to see how the game worked, and once for "score." It wasn't clear what "tilt" meant... the first run cleared up that the paddle doesn't tilt, just translate on X axis. Overall, fun. No need to make real game interaction. I learned a bit about Nim's `enum` and `ord` and `template`.
+
 ---
 
 ## Stats
@@ -65,6 +69,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 13   10:56:01   6594      0   12:00:49   4841      0
  12   11:36:20   7303      0   14:19:43   5029      0
  11   12:52:11   6387      0   13:16:19   6192      0
  10   10:49:04   6720      0   13:51:06   5115      0
