@@ -58,6 +58,10 @@ I had this completely solved (part 1 implemented, part 2 in my head), part 2 fir
 
 Part 1 was a piece of cake using day 11 code. Part 2 required displaying the world at the start to see where the walls are (not at the bottom!) and running the vm twice: once with instrumentation to see how the game worked, and once for "score." It wasn't clear what "tilt" meant... the first run cleared up that the paddle doesn't tilt, just translate on X axis. Overall, fun. No need to make real game interaction. I learned a bit about Nim's `enum` and `ord` and `template`.
 
+### Day 14: Space Stoichiometry ###
+
+It took me four attempts at an approach to part 2: brute force, looking for a cycle back to zero inventory of chemicals, convergence of the fuel per ore ratio, and finally the winner, binary search on the fuel result. Part 2 took way too long. Dunno if people are taking Saturday off, or if it was difficult, but I had a better rank than most days with my usual +10 hours start time.
+
 ---
 
 ## Stats
@@ -69,6 +73,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 14   10:47:14   3317      0   12:17:27   3027      0
  13   10:56:01   6594      0   12:00:49   4841      0
  12   11:36:20   7303      0   14:19:43   5029      0
  11   12:52:11   6387      0   13:16:19   6192      0
