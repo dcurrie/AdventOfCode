@@ -61,6 +61,11 @@ Part 1 was a piece of cake using day 11 code. Part 2 required displaying the wor
 ### Day 14: Space Stoichiometry ###
 
 It took me four attempts at an approach to part 2: brute force, looking for a cycle back to zero inventory of chemicals, convergence of the fuel per ore ratio, and finally the winner, binary search on the fuel result. Part 2 took way too long. Dunno if people are taking Saturday off, or if it was difficult, but I had a better rank than most days with my usual +10 hours start time.
+Learned this after looking at other Nim solutions: `1_000_000_000_000.int` to work around int syntax issue for large int literals (day 9 also), and `t.getOrDefault(key)` for table access to avoid `if t.hasKey(key): t[key] else: 0`; others tended to use `ceil` after conversion to float and back to int rather than `+ 1` and `div`. zevv got the convergence of the fuel per ore ratio approach to work by using bigger fuel production steps.
+
+### Day 15: Oxygen System ###
+
+My Sunday has family time commitments... finally eeked in an hour to work on this in the mid afternoon. I got off to a false start trying to keep a backtrack stack within the i/o functions, and keep the vm as the top level driver of the solution. Eventually this got too complicated, and I restarted with a recursive solution to develop the map. This worked much better. Once I had the map, my graph toolkit quickly found the part 1 and part 2 values. I learned the awkward Nim syntax for unicode `Runes` to make the debug display of the map a bit nicer.
 
 ---
 
@@ -73,6 +78,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 15   15:07:03   3935      0   15:14:36   3585      0
  14   10:47:14   3317      0   12:17:27   3027      0
  13   10:56:01   6594      0   12:00:49   4841      0
  12   11:36:20   7303      0   14:19:43   5029      0
