@@ -65,7 +65,13 @@ Learned this after looking at other Nim solutions: `1_000_000_000_000.int` to wo
 
 ### Day 15: Oxygen System ###
 
-My Sunday has family time commitments... finally eeked in an hour to work on this in the mid afternoon. I got off to a false start trying to keep a backtrack stack within the i/o functions, and keep the vm as the top level driver of the solution. Eventually this got too complicated, and I restarted with a recursive solution to develop the map. This worked much better. Once I had the map, my graph toolkit quickly found the part 1 and part 2 values. I learned the awkward Nim syntax for unicode `Runes` to make the debug display of the map a bit nicer.
+My Sunday has family time commitments... finally eeked in an hour to work on this in the mid afternoon. I got off to a false start trying to keep a backtrack stack within the i/o functions, and keep the vm as the top level driver of the solution. Eventually this got too complicated, and I restarted with a recursive solution to develop the map. This worked much better. Once I had the map, my graph toolkit quickly found the part 1 and part 2 values. I learned the awkward Nim syntax for unicode `Runes` to make the debug display of the map a bit nicer. Later, looking at solutions and reddit, I see that my DFS approach to part 1a (mapping the world) assumed a finite world; fortunately that was true! The most clever solutions used BFS and cloned the vm for backtracking to avoid having to walk back the droid in the vm... clever.
+Fun unicode: '☕⚪⚫⚽⛅⛔⛪⛳⛵⛺✨❌❎➰➿⬛⬜⭐⭕'
+
+### Day 16: Flawed Frequency Transmission ###
+
+Part 1 was kinda ugly but straightforward via brute force. That didn't work for part 2. Frankly, I was stumped, and after an hour or so, turned to reddit for a hint. I knew the growing number of zeros on the front of the "fft" calculation provided an optimization opportunity, but missed the two big observations: that the coefficients would all be 1 in the region of interest, and that therefore the calculation devolved into partial sums.
+Good explanation [here] (https://github.com/mebeim/aoc/blob/master/2019/README.md#day-16---flawed-frequency-transmission), which is what I used as a model for my implementation. Re: Nim... I stumbled a few minutes figuring out that HSlices can't run backwards, so `for i in 3..1` needs to be written as `for i in countdown(3,1)`.
 
 ---
 
@@ -78,6 +84,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 16   10:57:37   4763      0   14:23:00   2652      0
  15   15:07:03   3935      0   15:14:36   3585      0
  14   10:47:14   3317      0   12:17:27   3027      0
  13   10:56:01   6594      0   12:00:49   4841      0
