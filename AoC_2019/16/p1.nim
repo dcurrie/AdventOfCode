@@ -68,7 +68,7 @@ proc part2a(n: int, o: int, sig: seq[int8]): seq[int8] =
     for phase in 1..n:
         for n in countdown(sig.len - 2, sig.len - o):
             sigv[n] = (sigv[n] + sigv[n+1]) mod 10
-        result = sigv
+    result = sigv
 
 proc part2(n: int, sig: seq[int8]): string = 
     let o = (((((((((((sig[0].int  * 10) +
@@ -89,4 +89,4 @@ when defined(test2):
     echo part2(100, parsein("03081770884921959731165446850517"))
     #for i in countdown(3,1): echo i
 
-echo part2(100, parsein(input))
+echo part2(100, parsein(input)) # 81207421
