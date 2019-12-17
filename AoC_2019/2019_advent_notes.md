@@ -73,6 +73,10 @@ Fun unicode: '☕⚪⚫⚽⛅⛔⛪⛳⛵⛺✨❌❎➰➿⬛⬜⭐⭕'
 Part 1 was kinda ugly but straightforward via brute force. That didn't work for part 2. Frankly, I was stumped, and after an hour or so, turned to reddit for a hint. I knew the growing number of zeros on the front of the "fft" calculation provided an optimization opportunity, but missed the two big observations: that the coefficients would all be 1 in the region of interest, and that therefore the calculation devolved into partial sums.
 Good explanation [here] (https://github.com/mebeim/aoc/blob/master/2019/README.md#day-16---flawed-frequency-transmission), which is what I used as a model for my implementation. Re: Nim... I stumbled a few minutes figuring out that HSlices can't run backwards, so `for i in 3..1` needs to be written as `for i in countdown(3,1)`.
 
+### Day 17: Set and Forget ###
+
+Part 1 was no problem using my `dgraph` library to find intersections. I noticed in the graph that there are two dead end nodes: the start, and what could only be the end. Then I had a couple failed attempts... the shortest path from start to end didn't cover all nodes, which should have been obvious. I left this approach in the code. Then I researched (NP-hard!) path covering and maximum path algorithms and despaired. Finally I tried a heuristic: go straight through intersections, if can't continue straight, go left if possible, otherwise go right. It worked! Having to segment that path programmatically seemed like too much work, so I did that using my text editor. The rest was easy once I remembered that I needed to reverse the input since my vm `pop`s the inputs off the input sequence.
+
 ---
 
 ## Stats
@@ -84,6 +88,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 17   14:10:52   4783      0   18:34:29   3545      0
  16   10:57:37   4763      0   14:23:00   2652      0
  15   15:07:03   3935      0   15:14:36   3585      0
  14   10:47:14   3317      0   12:17:27   3027      0
