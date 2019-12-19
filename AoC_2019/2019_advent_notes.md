@@ -81,6 +81,10 @@ Part 1 was no problem using my `dgraph` library to find intersections. I noticed
 
 I can take zero credit for figuring this out. My initial solution did a Dijkstra shortest path search with doors closed, choosing one reachable key at a time, adding the door edges as keys are chosen, exploring all possible paths by cloning the state at each choice. It works great for small examples, which included 4 of the 5 examples. Combinatorial explosion ensued. After banging my head against the wall, I went to the solution thread on reddit, and found [this Lua solution](https://www.reddit.com/r/adventofcode/comments/ec8090/2019_day_18_solutions/fb9zet8?utm_source=share&utm_medium=web2x) [source](https://github.com/jwise/aoc/blob/master/2019/18.lua). I translated to Nim, which wasn't a picnic, and solved my challenge. I think adding memoization to my original version would have achieved the same result. 
 
+### Day 19: Tractor Beam ###
+
+I got a false start thinking that the vm ran continuously. When I tried cloning it for every trial, it worked. At that point part 1 was trivial. For part two I estimated the start of the search area using some targeted exploration to find the slopes of the beam, then extended the code to search that space looking for the rectangle, which amazing worked the first try.
+
 ---
 
 ## Stats
@@ -92,6 +96,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 19   10:50:59   3455      0   11:53:04   2634      0
  18   22:19:04   1806      0   23:08:25   1378      0
  17   14:10:52   4783      0   18:34:29   3545      0
  16   10:57:37   4763      0   14:23:00   2652      0
