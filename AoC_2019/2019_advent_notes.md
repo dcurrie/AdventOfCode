@@ -71,11 +71,15 @@ Fun unicode: '☕⚪⚫⚽⛅⛔⛪⛳⛵⛺✨❌❎➰➿⬛⬜⭐⭕'
 ### Day 16: Flawed Frequency Transmission ###
 
 Part 1 was kinda ugly but straightforward via brute force. That didn't work for part 2. Frankly, I was stumped, and after an hour or so, turned to reddit for a hint. I knew the growing number of zeros on the front of the "fft" calculation provided an optimization opportunity, but missed the two big observations: that the coefficients would all be 1 in the region of interest, and that therefore the calculation devolved into partial sums.
-Good explanation [here] (https://github.com/mebeim/aoc/blob/master/2019/README.md#day-16---flawed-frequency-transmission), which is what I used as a model for my implementation. Re: Nim... I stumbled a few minutes figuring out that HSlices can't run backwards, so `for i in 3..1` needs to be written as `for i in countdown(3,1)`.
+Good explanation [here](https://github.com/mebeim/aoc/blob/master/2019/README.md#day-16---flawed-frequency-transmission), which is what I used as a model for my implementation. Re: Nim... I stumbled a few minutes figuring out that HSlices can't run backwards, so `for i in 3..1` needs to be written as `for i in countdown(3,1)`.
 
 ### Day 17: Set and Forget ###
 
 Part 1 was no problem using my `dgraph` library to find intersections. I noticed in the graph that there are two dead end nodes: the start, and what could only be the end. Then I had a couple failed attempts... the shortest path from start to end didn't cover all nodes, which should have been obvious. I left this approach in the code. Then I researched (NP-hard!) path covering and maximum path algorithms and despaired. Finally I tried a heuristic: go straight through intersections, if can't continue straight, go left if possible, otherwise go right. It worked! Having to segment that path programmatically seemed like too much work, so I did that using my text editor. The rest was easy once I remembered that I needed to reverse the input since my vm `pop`s the inputs off the input sequence.
+
+### Day 18: Many-Worlds Interpretation ###
+
+I can take zero credit for figuring this out. My initial solution did a Dijkstra shortest path search with doors closed, choosing one reachable key at a time, adding the door edges as keys are chosen, exploring all possible paths by cloning the state at each choice. It works great for small examples, which included 4 of the 5 examples. Combinatorial explosion ensued. After banging my head against the wall, I went to the solution thread on reddit, and found [this Lua solution](https://www.reddit.com/r/adventofcode/comments/ec8090/2019_day_18_solutions/fb9zet8?utm_source=share&utm_medium=web2x) [source](https://github.com/jwise/aoc/blob/master/2019/18.lua). I translated to Nim, which wasn't a picnic, and solved my challenge. I think adding memoization to my original version would have achieved the same result. 
 
 ---
 
@@ -88,6 +92,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 18   22:19:04   1806      0   23:08:25   1378      0
  17   14:10:52   4783      0   18:34:29   3545      0
  16   10:57:37   4763      0   14:23:00   2652      0
  15   15:07:03   3935      0   15:14:36   3585      0
