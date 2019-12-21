@@ -85,6 +85,10 @@ I can take zero credit for figuring this out. My initial solution did a Dijkstra
 
 I got a false start thinking that the vm ran continuously. When I tried cloning it for every trial, it worked. At that point part 1 was trivial. For part two I estimated the start of the search area using some targeted exploration to find the slopes of the beam, then extended the code to search that space looking for the rectangle, which amazing worked the first try.
 
+### Day 20: Donut Maze ###
+
+I solved part 1 quickly with my dgraph library, and had the solution, **twice**! for part 2 (both versions worked on samples), but a bug in the input processor incorrectly characterized inner and outer ports. Ugh! Nevertheless, even after 24 hours, I was 2184 on the leaderboard. I guess it was hard.
+
 ---
 
 ## Stats
@@ -96,6 +100,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 20   11:58:42   2183      0       >24h   2148      0
  19   10:50:59   3455      0   11:53:04   2634      0
  18   22:19:04   1806      0   23:08:25   1378      0
  17   14:10:52   4783      0   18:34:29   3545      0
