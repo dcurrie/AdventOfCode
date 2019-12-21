@@ -89,6 +89,10 @@ I got a false start thinking that the vm ran continuously. When I tried cloning 
 
 I solved part 1 quickly with my dgraph library, and had the solution, **twice**! for part 2 (both versions worked on samples), but a bug in the input processor incorrectly characterized inner and outer ports. Ugh! Nevertheless, even after 24 hours, I was 2184 on the leaderboard. I guess it was hard.
 
+### Day 21: Springdroid Adventure ###
+
+This was 3 instruction combinatorial logic. Part 1 was easy, even after finishing Donut Maze a little after midnight (after party and beer). Part 2 included a zinger of jump of 5 after a running start rather than the usual 4. That sent me to bed. Rising late, I worked it out, but it was work. I left lots of fumbled attempts and notes in the code.
+
 ---
 
 ## Stats
@@ -100,6 +104,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 21   01:39:33    852      0   13:23:13   2022      0
  20   11:58:42   2183      0       >24h   2148      0
  19   10:50:59   3455      0   11:53:04   2634      0
  18   22:19:04   1806      0   23:08:25   1378      0
