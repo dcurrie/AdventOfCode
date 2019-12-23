@@ -236,71 +236,14 @@ echo "Part 1, damage: ", part1() # 19355862
 proc part2(): int = 
     verbo = true
     var m = initvm(readin())
-#[
-    #                             T               J
-    add_input(m, "OR C T")  #     C
-    add_input(m, "OR F T")  #    C | F
-    add_input(m, "NOT T T") #  ~(C | F)
-    add_input(m, "OR B J")  #                     B
-    add_input(m, "OR E J")  #                   B | E
-    add_input(m, "NOT J J") #                 ~(B | E)
-    add_input(m, "OR T J")  # ~(C | F)   ~(C | F) | ~(B | E)
-    add_input(m, "NOT A T") #    ~A      ~(C | F) | ~(B | E)
-    add_input(m, "OR T J")  #          ~A | ~(C | F) | ~(B | E)
-
-    add_input(m, "AND C T")
-    add_input(m, "OR C T")  #    C
-    add_input(m, "OR I T")
-    add_input(m, "NOT T T")
-    add_input(m, "OR T J")
-]#
-#[
-
-    #add_input(m, "OR G T")  #     G
-    add_input(m, "NOT H T")  #     ~H
-    add_input(m, "AND F T") #   F & ~H   
-    add_input(m, "OR C T")  # (C | F & ~H)
-    add_input(m, "OR G T")
-    add_input(m, "OR B J")  #                     B
-    add_input(m, "OR I J")  #                   B | E               ####### I?
-    add_input(m, "AND T J") #            (C | F & ~H) & (B | E)
-    add_input(m, "AND A J") #           (A & (C | F & ~H) & (B | E)
-    add_input(m, "NOT J J") #          ~(A & (C | F & ~H) & (B | E)
-                                    D & (~A | ~(C | F) | ~(C | ~H) | ~(B | E))
-]#
-#[
     add_input(m, "OR E J")
     add_input(m, "OR H J")
-    add_input(m, "AND D J") #      D & (E | H)
-    #add_input(m, "OR E T")
-    
-    add_input(m, "NOT A T")
-    add_input(m, "OR I T")
-
-    add_input(m, "AND T J")
-]#
-    add_input(m, "OR E J")
-    add_input(m, "OR H J")
-    add_input(m, "AND D J") #      D & (E | H)
-    #add_input(m, "OR E T")
-    
-    add_input(m, "OR A T")
-    add_input(m, "AND B T")
-    add_input(m, "AND C T")
-    add_input(m, "NOT T T")
-    add_input(m, "OR I T")
-
-    add_input(m, "AND T J")
-
+    add_input(m, "AND D J")
     add_input(m, "OR A T") 
-    add_input(m, "AND A T") #    A
     add_input(m, "AND B T")
     add_input(m, "AND C T")
-    #add_input(m, "AND D T") # ?
     add_input(m, "NOT T T")
     add_input(m, "AND T J")
-
-
     add_input(m, "RUN")
     reverse(m.input)
     while not m.halted:
@@ -309,76 +252,5 @@ proc part2(): int =
             stdout.write(t.char)
         else:
             return t
-
-# (D and (E or H)) fails:
-# ####.###.#...###
-# ABCDEFGHI  
-
-# (D and (E or H)) and (not (not E and not I) fails:
-#####..#.###.####
-#   ABCDEFGHI  
-#  ^   ^   ^
-
-# (D and (E or H)) and (not (not I) fails:
-######.####..#.###
-# ABCDEFGHI  
-#    ^_  ^   ^
-# jumps 5!
-
-# and not (A & B & C) fails:
-#####..#.###.####
-#   ABCDEFGHI        because I
-#  ^_  ^   ^
-
-# and (D and (E or H)) and (I or not A) fails:
-
-#####..#.###.####
-#   ABCDEFGHI        because I
-
-# and (D and (E or H)) and (I or (not A or not B or not C))
-# and (D and (E or H)) and (I or not (A and B and C)) fails:
-
-
-
-####################################
-
-
-
-#####.##.##...###
-# ^   ^   ^
-#  ABCDEFGHI        C and I holes
-
-#####.###..#..###
-#  ^   ^   ^
-#   ABCDEFGHI        B and I holes
-#        @
-
-# ~A | ~(C | F) | ~(B | E)
-# ~(A & (C | G) & (C | F) & (B | E))
-# ~(A & (C | F & G) & (B | E))
-# ###.###.##..###
-#  ^   ^   ^
-#   ABCDEFGHI
-
-# ###.#.#..######
-#   ^   ^   ^   _
-#    ABCDEFGHI       A hole works, but jumps early due to C & G ?
-# ###.#.#..######
-# ^   ^   ^   _
-#  ABCDEFGHI         A hole works, but jumps early due to C & G ? need to consider H
-
-# ###.###.#...###
-# ^   ^   ^   _
-#  ABCDEFGHI          C & G holes
-
-# ###.#..########
-# ^   ^    _
-#  ABCDEFGHI          C & F holes
-# jump when:
-# next space is hole  NOT A J
-# or B is hole and E is hole => NOT B AND NOT E == NOT (B OR E)
-# or C is hole and F is hole => NOT C AND NOT F == NOT (C OR F)
-# or C is hole and G is hole => NOT C AND NOT G == NOT (C OR G)
-# and D is solid (for place to land)
 
 echo "Part 1, damage: ", part2() # 1140470745

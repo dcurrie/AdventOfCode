@@ -91,7 +91,12 @@ I solved part 1 quickly with my dgraph library, and had the solution, **twice**!
 
 ### Day 21: Springdroid Adventure ###
 
-This was 3 instruction combinatorial logic. Part 1 was easy, even after finishing Donut Maze a little after midnight (after party and beer). Part 2 included a zinger of jump of 5 after a running start rather than the usual 4. That sent me to bed. Rising late, I worked it out, but it was work. I left lots of fumbled attempts and notes in the code.
+This was 3 instruction combinatorial logic. Part 1 was easy, even after finishing Donut Maze a little after midnight (after party and beer). Part 2 included a zinger of jump of 5 after a running start rather than the usual 4. That sent me to bed. Rising late, I worked it out, but it was work. I left lots of fumbled attempts and notes in the code. Update: removed the redundant stuff from the code. Git knows all!
+
+### Day 22: Slam Shuffle ###
+
+Part 1 was was tedious, but I worked it out, manifesting the cards only for shuffle, keeping offset and direction as parameters of the deck. This saved a lot of copying. After hours working on the math for part 2, I gave up and went for a hint. Then I had to find a math library with `powmod`. I went with `stint` from nimble, but it wasn't until I coded it all that I learned that  negative numbers apparently aren't supported. I tried adjusting the inputs by offsetting by the modulus, but that did not give me the right answer. Back to the drawing board. So, I implemented a Swift solution stealing shamelessly from github, but at least I learned a little Swift and XCode. Maybe I'll port it back to Nim when I'm more awake.
+
 
 ---
 
@@ -104,6 +109,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 22   21:11:53   3573      0       >24h   1554      0
  21   01:39:33    852      0   13:23:13   2022      0
  20   11:58:42   2183      0       >24h   2148      0
  19   10:50:59   3455      0   11:53:04   2634      0
