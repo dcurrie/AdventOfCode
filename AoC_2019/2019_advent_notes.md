@@ -95,7 +95,7 @@ This was 3 instruction combinatorial logic. Part 1 was easy, even after finishin
 
 ### Day 22: Slam Shuffle ###
 
-Part 1 was was tedious, but I worked it out, manifesting the cards only for shuffle, keeping offset and direction as parameters of the deck. This saved a lot of copying. After hours working on the math for part 2, I gave up and went for a hint. Then I had to find a math library with `powmod`. I went with `stint` from nimble, but it wasn't until I coded it all that I learned that  negative numbers apparently aren't supported. I tried adjusting the inputs by offsetting by the modulus, but that did not give me the right answer. Back to the drawing board. So, I implemented a Swift solution stealing shamelessly from github, but at least I learned a little Swift and XCode. Maybe I'll port it back to Nim when I'm more awake.
+Part 1 was was tedious, but I worked it out, manifesting the cards only for shuffle, keeping offset and direction as parameters of the deck. This saved a lot of copying. After hours working on the math for part 2, I gave up and went for a hint. Then I had to find a math library with `powmod`. I went with `stint` from nimble, but it wasn't until I coded it all that I learned that  negative numbers apparently aren't supported by `powmod`. I tried adjusting the inputs by offsetting by the modulus, but that did not give me the right answer. Back to the drawing board. So, I implemented a Swift solution stealing shamelessly from github, but at least I learned a little Swift and XCode. Translated the Swift code to Nim, using `stint` and explicit powmod called `power`.
 
 ### Day 23: Category Six ###
 
