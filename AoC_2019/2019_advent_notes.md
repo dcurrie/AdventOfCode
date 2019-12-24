@@ -101,6 +101,10 @@ Part 1 was was tedious, but I worked it out, manifesting the cards only for shuf
 
 Best day yet... this is why I do AoC with a new language, in this case, Nim: today I used, for the first time, Nim's `thread` and `channel` features. There was a false start with trying to use `thread`s and `lock`s together with a shared `deque` -- not what Nim's thread model supports. Switched from `thread` and  `deque` with `lock` to `thread` and `channel` and got past the compiler. There was a misinterpretation of the problem (I sent X to a NIC before Y was received, so the NIC got X,-1 instead of X,Y due to a race). I modified the channel to use (x,y) pairs, and finished part 1. Part 2 was then a piece of cake using `peek` on channels along with `sleep` to confirm idleness. It would have been more robust with a counting semaphore, but this moved beyond the simple Nim thread model. Maybe someday I'll explore `spawn`.
 
+### Day 24: Planet of Discord ###
+
+Lots of bit twiddling. Learned Nim syntax for binary constants, and found the name for `countSetBits`. In part 2 I chose to use positions 1..25 instead of the x,y 0..4,0..4 that I used in part 1 so I could verify my adjacency with the example in the problem statement. In part 2 I used 25 explicit adjacency calculations rather than the math I used in part 1. I was pleasantly kinda surprised I had no typos and the code worked first time.
+
 ---
 
 ## Stats
@@ -112,6 +116,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 24   10:13:34   2788      0   12:20:12   1834      0
  23   11:47:47   2304      0   12:52:21   2181      0
  22   21:11:53   3573      0       >24h   1554      0
  21   01:39:33    852      0   13:23:13   2022      0
