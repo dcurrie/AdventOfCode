@@ -105,6 +105,11 @@ Best day yet... this is why I do AoC with a new language, in this case, Nim: tod
 
 Lots of bit twiddling. Learned Nim syntax for binary constants, and found the name for `countSetBits`. In part 2 I chose to use positions 1..25 instead of the x,y 0..4,0..4 that I used in part 1 so I could verify my adjacency with the example in the problem statement. In part 2 I used 25 explicit adjacency calculations rather than the math I used in part 1. I was pleasantly kinda surprised I had no typos and the code worked first time.
 
+### Day 25: Cryostasis ###
+
+I played the adventure game manually, recording the world (in draw.io) and the moves in a Nim array. Once I had all the (eight) items I could carry, the Pressure-Sensitive Floor would not admit me. I went to reddit for a clue, and saw that people were exploring the combination of things that got you though. I used Nim's `nextPermutation` to find all the permutations of 8 items and tried carrying from the 0 to 8 of them from the front of the permutation. There are more efficient ways to do it, but after recording over 4,000,000 lines of dribble text, I got through!
+
+
 ---
 
 ## Stats
@@ -116,6 +121,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 25   13:13:23   1870      0   13:13:35   1286      0
  24   10:13:34   2788      0   12:20:12   1834      0
  23   11:47:47   2304      0   12:52:21   2181      0
  22   21:11:53   3573      0       >24h   1554      0
