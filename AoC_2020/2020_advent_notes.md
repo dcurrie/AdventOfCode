@@ -45,6 +45,14 @@ off-by-one issues, it was all pretty easy.
 Looking at others' solutions, it's nice to see zevv's use of NPeg, and
 HugoGranstrom's `input.split("\n\n")` to separate the passports.
 
+### Day 5: Binary Boarding ###
+
+A little too easy, but a nice break for a snowy weekend day. I did the text to
+binary conversion in the editor, and used `parseutils.parseBin` to get the seat
+IDs. In part two Nim intsets came in handy. I couldn't help but thing it would
+have been more elegant to start with a full set and remove seats seeing what's
+left, but the brute force approach was easy and fast.
+
 ---
 
 ## Stats
@@ -53,15 +61,19 @@ Note: the times are from midnight EST; the challenges come out at midnight, but 
 
 These are your personal leaderboard statistics. Rank is your position on that leaderboard: 1 means you were the first person to get that star, 2 means the second, 100 means the 100th, etc. Score is the number of points you got for that rank: 100 for 1st, 99 for 2nd, ..., 1 for 100th, and 0 otherwise.
 
+```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  5   09:49:16  32846      0   10:05:06  31655      0
   4   13:22:15  47885      0   14:14:38  39618      0
   3   10:37:33  42244      0   11:43:19  42454      0
   2       >24h  75704      0       >24h  73340      0
   1       >24h  98813      0       >24h  92439      0
+  ```
 
-  Nim:
+  Nim leaderboard starting from Day 4:
 
+```
  65)  770 ****  dougcurrie
-
-
+ 60) 1059 *****  dougcurrie
+```
