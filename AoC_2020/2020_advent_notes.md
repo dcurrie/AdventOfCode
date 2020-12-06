@@ -53,6 +53,15 @@ IDs. In part two Nim intsets came in handy. I couldn't help but thing it would
 have been more elegant to start with a full set and remove seats seeing what's
 left, but the brute force approach was easy and fast.
 
+### Day 6: Custom Customs ###
+
+I would have finished this one very quicky (after starting at 1:30 PM after
+annual condo meetings) if only I paid more attention to the line splitting and
+its affect on counts since the input file ended with a '\n' whereas no other
+group of lines did after I split them up. Anyway, I was able make use of
+HugoGranstrom's `input.split("\n\n")` to separate the groups, and learned a bit
+about Nim sequtils... wishing I used Julia for this one.
+
 ---
 
 ## Stats
@@ -64,6 +73,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  6   13:42:16  43976      0   13:59:07  41934      0
   5   09:49:16  32846      0   10:05:06  31655      0
   4   13:22:15  47885      0   14:14:38  39618      0
   3   10:37:33  42244      0   11:43:19  42454      0
@@ -76,4 +86,5 @@ Day       Time   Rank  Score       Time   Rank  Score
 ```
  65)  770 ****  dougcurrie
  60) 1059 *****  dougcurrie
+ 66) 1323 ******  dougcurrie
 ```
