@@ -62,6 +62,13 @@ group of lines did after I split them up. Anyway, I was able make use of
 HugoGranstrom's `input.split("\n\n")` to separate the groups, and learned a bit
 about Nim sequtils... wishing I used Julia for this one.
 
+### Day 7: Handy Haversacks ###
+
+Nim Tables came in handy, though a quick search didn't turn up a `reduce` or
+`fold` for Tables, so I resorted to a loop. Recursion for the counts was
+straightforward, or should have been if not for off-by-one tuning. I avoided
+the more complex parsing by using search/replace in the texteditor on the input.
+
 ---
 
 ## Stats
@@ -73,6 +80,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  7   09:37:01  24973      0   10:11:17  21353      0
   6   13:42:16  43976      0   13:59:07  41934      0
   5   09:49:16  32846      0   10:05:06  31655      0
   4   13:22:15  47885      0   14:14:38  39618      0
@@ -87,4 +95,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  65)  770 ****  dougcurrie
  60) 1059 *****  dougcurrie
  66) 1323 ******  dougcurrie
+ 44) 1645 *******  dougcurrie
 ```
