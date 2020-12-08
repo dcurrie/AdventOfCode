@@ -69,6 +69,13 @@ Nim Tables came in handy, though a quick search didn't turn up a `reduce` or
 straightforward, or should have been if not for off-by-one tuning. I avoided
 the more complex parsing by using search/replace in the texteditor on the input.
 
+### Day 8: Handheld Halting ###
+
+OK time for the VM! Actually, I did it all from scratch using strings for ops
+and parsed operands, so I wasn't going for speed, though Nim was plenty fast
+enough. I tripped up over tuple syntax, and anonomous function syntax, but
+eventually made good use of the sugar module for `collect` and `=>`.
+
 ---
 
 ## Stats
@@ -80,6 +87,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  8   08:50:51  30015      0   09:09:57  25790      0
   7   09:37:01  24973      0   10:11:17  21353      0
   6   13:42:16  43976      0   13:59:07  41934      0
   5   09:49:16  32846      0   10:05:06  31655      0
@@ -96,4 +104,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  60) 1059 *****  dougcurrie
  66) 1323 ******  dougcurrie
  44) 1645 *******  dougcurrie
+ 52) 1941 ********  dougcurrie
 ```
