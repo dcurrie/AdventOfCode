@@ -76,6 +76,18 @@ and parsed operands, so I wasn't going for speed, though Nim was plenty fast
 enough. I tripped up over tuple syntax, and anonomous function syntax, but
 eventually made good use of the sugar module for `collect` and `=>`.
 
+Looking at other Nim solutions I learned of `parseEnum`, which will be useful
+if this VM gets more use in future days. I was also reminded of the usefulness
+of having a VM state object that can be used to pass the pgm and acc around.
+
+### Day 9: Encoding Error ###
+
+This was fun. Nim CountTable was perfect, and I got part 1 on the first try with
+no fuss once I looked into how to decrement a CountTable entry. Part two was
+easy using slices and sequtils, though I had to submit twice because I overlooked
+terminating the re-use of part 1 correctly after changing a `return` to an
+assignment and neglecting the `break`. Once I added that, it worked fine.
+
 ---
 
 ## Stats
@@ -87,6 +99,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  9   08:28:39  28096      0   08:49:30  26436      0
   8   08:50:51  30015      0   09:09:57  25790      0
   7   09:37:01  24973      0   10:11:17  21353      0
   6   13:42:16  43976      0   13:59:07  41934      0
@@ -105,4 +118,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  66) 1323 ******  dougcurrie
  44) 1645 *******  dougcurrie
  52) 1941 ********  dougcurrie
+ 50) 2241 *********  dougcurrie
 ```
