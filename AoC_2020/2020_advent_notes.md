@@ -37,7 +37,7 @@ A very busy day at work, I squeezed in AoC work at lunchtime and between meeting
 I learned a bit about custom `scanf` matchers, including misleading documentation
 at https://nim-lang.org/docs/strscans.html#user-definable-matchers -- when used
 with $[] a matcher takes 2 arguments; with ${} it takes 3. I had assumed that the
-string match result would be extracted by the `scanf` code using the match lenth
+string match result would be extracted by the `scanf` code using the match length
 returned by the matcher. Rather, `scanf` expects a `var` arg to the matcher that
 receives this string. Other than that, and silly string index arithmetic
 off-by-one issues, it was all pretty easy.
@@ -55,7 +55,7 @@ left, but the brute force approach was easy and fast.
 
 ### Day 6: Custom Customs ###
 
-I would have finished this one very quicky (after starting at 1:30 PM after
+I would have finished this one very quickly (after starting at 1:30 PM after
 annual condo meetings) if only I paid more attention to the line splitting and
 its affect on counts since the input file ended with a '\n' whereas no other
 group of lines did after I split them up. Anyway, I was able make use of
@@ -67,13 +67,13 @@ about Nim sequtils... wishing I used Julia for this one.
 Nim Tables came in handy, though a quick search didn't turn up a `reduce` or
 `fold` for Tables, so I resorted to a loop. Recursion for the counts was
 straightforward, or should have been if not for off-by-one tuning. I avoided
-the more complex parsing by using search/replace in the texteditor on the input.
+the more complex parsing by using search/replace in the text editor on the input.
 
 ### Day 8: Handheld Halting ###
 
 OK time for the VM! Actually, I did it all from scratch using strings for ops
 and parsed operands, so I wasn't going for speed, though Nim was plenty fast
-enough. I tripped up over tuple syntax, and anonomous function syntax, but
+enough. I tripped up over tuple syntax, and anonymous function syntax, but
 eventually made good use of the sugar module for `collect` and `=>`.
 
 Looking at other Nim solutions I learned of `parseEnum`, which will be useful
@@ -88,6 +88,14 @@ easy using slices and sequtils, though I had to submit twice because I overlooke
 terminating the re-use of part 1 correctly after changing a `return` to an
 assignment and neglecting the `break`. Once I added that, it worked fine.
 
+### Day 10: Adapter Array ###
+
+The part 2 combinatorics caused a bit of math head scratching that I abandoned
+after several minutes and decided on a brute force computational approach.
+This worked fine on the example, after some debugging of the combinations of
+results of the recursion, but blew up for the real input. Adding memoization
+was easy and solved the performance problem.
+
 ---
 
 ## Stats
@@ -99,6 +107,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 10   08:44:24  28271      0   10:12:05  18605      0
   9   08:28:39  28096      0   08:49:30  26436      0
   8   08:50:51  30015      0   09:09:57  25790      0
   7   09:37:01  24973      0   10:11:17  21353      0
@@ -119,4 +128,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  44) 1645 *******  dougcurrie
  52) 1941 ********  dougcurrie
  50) 2241 *********  dougcurrie
+ 49) 2556 **********  dougcurrie
 ```
