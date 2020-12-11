@@ -96,6 +96,16 @@ This worked fine on the example, after some debugging of the combinations of
 results of the recursion, but blew up for the real input. Adding memoization
 was easy and solved the performance problem.
 
+### Day 11: Seating System ###
+
+Cellular Automata day! Struggled with the syntax for `foldl` macro with mixed
+types (backwards from what I initially guessed), and managing Enums. I was
+thinking Julia would have been much easier. Once I was able to compile,
+the solutions to Parts 1 and 2 both worked the first time. I was lucky to
+choose Empty ('L') for padding to avoid special cases at the boundaries in
+Part 1, because it made the termination of the search in each direction
+trivial and automatic in Part 2.
+
 ---
 
 ## Stats
@@ -107,6 +117,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 11   09:46:19  21387      0   10:17:58  17231      0
  10   08:44:24  28271      0   10:12:05  18605      0
   9   08:28:39  28096      0   08:49:30  26436      0
   8   08:50:51  30015      0   09:09:57  25790      0
@@ -129,4 +140,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  52) 1941 ********  dougcurrie
  50) 2241 *********  dougcurrie
  49) 2556 **********  dougcurrie
+ 44) 2885 ***********  dougcurrie
 ```
