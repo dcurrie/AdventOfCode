@@ -106,6 +106,13 @@ choose Empty ('L') for padding to avoid special cases at the boundaries in
 Part 1, because it made the termination of the search in each direction
 trivial and automatic in Part 2.
 
+### Day 12: Rain Risk ###
+
+Following directions. I decided to learn about Complex in Nim, a fortuitous
+choice because the conversion from Part 1 to Part 2 was almost trivial: change
+the starting condition, and about two lines of code. Hooray. Again, once the
+code compiled (as I figured out Nim syntax) it ran first time.
+
 ---
 
 ## Stats
@@ -117,6 +124,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 12   08:36:04  19652      0   08:43:34  16334      0
  11   09:46:19  21387      0   10:17:58  17231      0
  10   08:44:24  28271      0   10:12:05  18605      0
   9   08:28:39  28096      0   08:49:30  26436      0
@@ -141,4 +149,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  50) 2241 *********  dougcurrie
  49) 2556 **********  dougcurrie
  44) 2885 ***********  dougcurrie
+ 39) 3210 ************  dougcurrie
 ```
