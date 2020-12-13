@@ -113,6 +113,14 @@ choice because the conversion from Part 1 to Part 2 was almost trivial: change
 the starting condition, and about two lines of code. Hooray. Again, once the
 code compiled (as I figured out Nim syntax) it ran first time.
 
+### Day 13: Shuttle Search ###
+
+Chinese Remainder Theorem day! I had a sieve solution working for the examples
+in part 2, but of course it was too slow for the solution. Once I got the hint
+that CRT is needed, I dusted off a Lobster implementation I did for Rosetta
+Code project, struggled with `foldl` syntax again, and once it compiled it
+worked first time run in the blink of an eye.
+
 ---
 
 ## Stats
@@ -124,6 +132,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 13   07:56:15  20770      0   09:51:27  11686      0
  12   08:36:04  19652      0   08:43:34  16334      0
  11   09:46:19  21387      0   10:17:58  17231      0
  10   08:44:24  28271      0   10:12:05  18605      0
@@ -150,4 +159,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  49) 2556 **********  dougcurrie
  44) 2885 ***********  dougcurrie
  39) 3210 ************  dougcurrie
-```
+ 37) 3557 *************  dougcurrie
+ ```
