@@ -20,7 +20,7 @@ proc muck2 (address, value, maskWc: uint64) =
     memory[address or maskWc] = value
     memory[address or msk] = value
     #echo(address, " ", value, " ", maskWc, " ", msk)
-    if maskWc != 0:
+    if msk != 0:
         muck2(address or (maskWc xor msk), value, msk)
         muck2(address, value, msk)
 
