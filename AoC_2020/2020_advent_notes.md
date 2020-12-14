@@ -121,6 +121,17 @@ that CRT is needed, I dusted off a Lobster implementation I did for Rosetta
 Code project, struggled with `foldl` syntax again, and once it compiled it
 worked first time run in the blink of an eye.
 
+### Day 14: Docking Data ###
+
+This was a struggle, mainly because I was trying to doo it while in a business
+meeting (on Google Meet) and distractions caused steupid errors. For example,
+in Part 1 I neglected to clear the hash table after the unit test so it had
+crap in it when I ran the input for score. The I got stuck because I took the
+36-bit memory too literally, and produced an answer mod 2^36 when in fact AoC
+was expecting a true sum. Yuck. Part two was a small head scratcher, but easy
+enough once I got out of that meeting with a recursive counting function.
+Fortunately I already knew the x&(x-1) hack to clear the lowest set bit.
+
 ---
 
 ## Stats
@@ -132,6 +143,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 14   09:23:32  17306      0   10:22:53  13705      0
  13   07:56:15  20770      0   09:51:27  11686      0
  12   08:36:04  19652      0   08:43:34  16334      0
  11   09:46:19  21387      0   10:17:58  17231      0
@@ -160,4 +172,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  44) 2885 ***********  dougcurrie
  39) 3210 ************  dougcurrie
  37) 3557 *************  dougcurrie
+ 37) 3891 **************  dougcurrie
  ```
