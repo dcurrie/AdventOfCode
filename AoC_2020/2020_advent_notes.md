@@ -132,6 +132,16 @@ was expecting a true sum. Yuck. Part two was a small head scratcher, but easy
 enough once I got out of that meeting with a recursive counting function.
 Fortunately I already knew the x&(x-1) hack to clear the lowest set bit.
 
+
+### Day 15: Rambunctious Recitation ###
+
+So many off by one errors... I was working in Julia last night, which has
+1-based arrays by default, and made several miscalculations due to that since
+Nim is 0=based. I started using a hash table for part one, scrapped it for a
+simple search to find previous, which utterly failed on part 2. So, I broke
+down and made the hashtable, and after fixing more off-by-one problems, it
+worked fairly quickly.
+
 ---
 
 ## Stats
@@ -143,6 +153,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 15   08:57:54  17834      0   09:15:26  16005      0
  14   09:23:32  17306      0   10:22:53  13705      0
  13   07:56:15  20770      0   09:51:27  11686      0
  12   08:36:04  19652      0   08:43:34  16334      0
@@ -173,4 +184,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  39) 3210 ************  dougcurrie
  37) 3557 *************  dougcurrie
  37) 3891 **************  dougcurrie
+ 36) 4249 ***************  dougcurrie
  ```
