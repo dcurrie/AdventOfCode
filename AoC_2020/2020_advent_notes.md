@@ -132,6 +132,9 @@ was expecting a true sum. Yuck. Part two was a small head scratcher, but easy
 enough once I got out of that meeting with a recursive counting function.
 Fortunately I already knew the x&(x-1) hack to clear the lowest set bit.
 
+What I learned later looking at others' solutions: Nim has 64 bit `int`s, so
+all the trouble I took with typecasts wasn't necessary (and was a pain).
+
 
 ### Day 15: Rambunctious Recitation ###
 
@@ -141,6 +144,43 @@ Nim is 0=based. I started using a hash table for part one, scrapped it for a
 simple search to find previous, which utterly failed on part 2. So, I broke
 down and made the hashtable, and after fixing more off-by-one problems, it
 worked fairly quickly.
+
+What I learned later looking at others' solutions: Hugo Granstrom's use of an
+array for the pairs is clever: the max index is the size of the problem, so it
+will be sparse, but probably less memory overall than the hash table, and faster
+to boot. I am embarrassed I didn't get the pipelined solution that Miran
+(narimiran) found. I had an inkling of it, but proceeded to code too quickly.
+That solution avoids the pairs altogether since it defers storing the index in
+the hash table. Combining the two approaches above would be cool.
+
+### Day 16: Ticket Translation ###
+
+Part 1 was straightforward after parsing the data; one silly error (same as
+before, failing to reinitialize). As expected, Part 2 was a constraint problem.
+In business meetings again, solved the example using all permutations of the
+fields, not taking the time to calculate the number of permutations needed for
+the input... of course there was lots of time to do that while the computer
+whirred...2432902008176640000.
+So, when the meeting was over, I redid it using a smarter approach, which
+amazingly worked as soon as it compiled. I learned a lot about syntax for Nim
+sets and stumbled on syntax to convert iterators to sequences.
+
+
+### Day 17: Conway Cubes ###
+
+I'm ticked off with this one. I had a good approach from the start based on my
+interpretation of the statement and rules that this would be a sparse array: Nim
+HashSets. I chose an array of neighbor offsets to iterate through. I wish I had
+not... for an hour or more I was getting the wrong results on the example. I was
+confused, as were others, by the shift in coordinates in the example; doubly so
+since my code was giving different results. In desperation I switched from the
+array of neighbor offsets to nested loops iterating over the same offsets, and
+the code worked! I still do not understand what was wrong with my initial
+solution. Once that was working, part 2 was a piece of cake, just one more inner
+loop.
+
+OK, there was a typo in the array of neighbor offsets. I blame my aging eyes,
+since I checked it visually several times. Yuck. It sucks to get old.
 
 ---
 
@@ -153,6 +193,8 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 17   10:58:59  12673      0   11:05:42  11793      0
+ 16   09:18:26  16907      0   10:51:29  12967      0
  15   08:57:54  17834      0   09:15:26  16005      0
  14   09:23:32  17306      0   10:22:53  13705      0
  13   07:56:15  20770      0   09:51:27  11686      0
@@ -185,4 +227,6 @@ Day       Time   Rank  Score       Time   Rank  Score
  37) 3557 *************  dougcurrie
  37) 3891 **************  dougcurrie
  36) 4249 ***************  dougcurrie
+ 34) 4603 ****************  dougcurrie
+ 33) 4946 *****************  dougcurrie
  ```
