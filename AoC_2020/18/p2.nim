@@ -47,23 +47,11 @@ proc part1(input: string): int =
 # add (( at the beginning of each expression and after each left parenthesis in the original expression; and
 # add )) at the end of the expression and before each right parenthesis in the original expression.
 
-proc reparen(input: string): string =
-    result.add("((")
-    for c in input:
-        case c:
-        of ' ':
-            discard
-        of '(':
-            result.add("(((")
-        of ')':
-            result.add(")))")
-        of '+':
-            result.add(")+(")
-        of '*':
-            result.add("))*((")
-        else:
-            result.add(c)
-    result.add("))")
+proc reparen(line: string): string =
+    result = "((" &
+             multiReplace(line,
+                 ("(","((("), (")",")))"), ("+",")+("), ("*","))*((")) &
+             "))"
 
 proc part2(input: string): int =
     for line in input.strip.splitLines:
