@@ -182,6 +182,16 @@ loop.
 OK, there was a typo in the array of neighbor offsets. I blame my aging eyes,
 since I checked it visually several times. Yuck. It sucks to get old.
 
+### Day 18: Operation Order ###
+
+This was amusing. I did Part 1 as a simple pushdown automata with separate
+stacks for values and operations. It was a nice little exercise, no real
+challenges. For Part 2, operator precedence was needed, and though I recall
+using clever precedence parsing algorithms, including Pratt, and recursive
+descent, I thought there might be something simpler. Lo and behold, a quick
+search turned up [this FORTRAN I compiler gem!](https://en.wikipedia.org/wiki/Operator-precedence_parser#Alternative_methods) It's just a string substitution
+to add parens in one pass, and then the simple Part 1 automata. What a hack!
+
 ---
 
 ## Stats
@@ -193,6 +203,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 18   09:10:57  12338      0   09:44:55  10604      0
  17   10:58:59  12673      0   11:05:42  11793      0
  16   09:18:26  16907      0   10:51:29  12967      0
  15   08:57:54  17834      0   09:15:26  16005      0
@@ -229,4 +240,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  36) 4249 ***************  dougcurrie
  34) 4603 ****************  dougcurrie
  33) 4946 *****************  dougcurrie
+ 31) 5277 ******************  dougcurrie
  ```
