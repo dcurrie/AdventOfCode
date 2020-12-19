@@ -192,7 +192,22 @@ descent, I thought there might be something simpler. Lo and behold, a quick
 search turned up [this FORTRAN I compiler gem!](https://en.wikipedia.org/wiki/Operator-precedence_parser#Alternative_methods) It's just a string substitution
 to add parens in one pass, and then the simple Part 1 automata. What a hack!
 
-### Day 19: ? ###
+Later: I realize after reading others's solutions that my pushdown automata is
+a simplified (no precedence) shunting-yard algorithm (for infix to postfix
+conversion) with integrated interpreter.
+
+### Day 19: Monster Messages ###
+
+OK, so this took waaay longer than I expected. Good thing it was a pandemic
+Saturday. It took a while to debug Part 1; I was looking for a problem in the
+recognizer (part1) but the problem was really in the input parser leaving the
+trailing rule ID off each alternate in a rule. Of course, that was obvious
+once I dumped the scanned rules, but I was focused on the recognizer engine.
+Part 2 was another kettle of fish. Part 1 was using a greedy algorithm
+unsuitable for recursion in the grammar. I first tried backtracking and got
+wrapped around the axle. I decided to just use "loop unrolling" to a few levels
+of recursion, and then brute force try all possibilities. Once it all compiled
+it worked first time... too bad it took a couple hours to code it!
 
 ---
 
@@ -205,6 +220,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 19   10:40:52   9410      0   12:43:20   7483      0
  18   09:10:57  12338      0   09:44:55  10604      0
  17   10:58:59  12673      0   11:05:42  11793      0
  16   09:18:26  16907      0   10:51:29  12967      0
@@ -243,4 +259,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  34) 4603 ****************  dougcurrie
  33) 4946 *****************  dougcurrie
  31) 5277 ******************  dougcurrie
+ 25) 5638 *******************  dougcurrie
  ```
