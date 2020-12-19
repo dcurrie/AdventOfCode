@@ -209,6 +209,10 @@ wrapped around the axle. I decided to just use "loop unrolling" to a few levels
 of recursion, and then brute force try all possibilities. Once it all compiled
 it worked first time... too bad it took a couple hours to code it!
 
+Later... I tried putting in the recursive rules as specified, undoing my "loop
+unrolling" that was intended to limit recursion, and lo and behold, it's 10x
+faster! The faster solution is called p2x.nim
+
 ---
 
 ## Stats
