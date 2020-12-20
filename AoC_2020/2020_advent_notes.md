@@ -213,6 +213,22 @@ Later... I tried putting in the recursive rules as specified, undoing my "loop
 unrolling" that was intended to limit recursion, and lo and behold, it's 10x
 faster! The faster solution is called p2x.nim
 
+### Day 20: ###
+
+This was a bit humiliating. It took hours for me to make progress on part 1 on
+this busy Sunday. It took a while for me to code all the possible rotations, all
+along thinking the necessary flips would be better to do programmatically as the
+image was rotated (or matched). The brute force assembly algorithm for part 1
+took forever, but gets the right answer. (A minute or more?) Starting part 2 I
+found my mistake, there are redundant rotations (the four extra from flipping
+both horizontally and vertically) which increased the work enormously. With that
+fix part 1 takes seconds. In part 2 I spent a lot of time working out the
+indexing algorithm for all the rotations so I would not have to make all the
+images. I made one stitched together image, and then rotated the sea monster
+instead of the image. The same indexing code worked for both steps, rotating the
+tiles and rotating the monster. Lots of index calculations, but the convolution
+went fast, and the answer was right fist try
+
 ---
 
 ## Stats
@@ -224,6 +240,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 20   16:13:43  10539      0   18:36:51   5783      0
  19   10:40:52   9410      0   12:43:20   7483      0
  18   09:10:57  12338      0   09:44:55  10604      0
  17   10:58:59  12673      0   11:05:42  11793      0
@@ -264,4 +281,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  33) 4946 *****************  dougcurrie
  31) 5277 ******************  dougcurrie
  25) 5638 *******************  dougcurrie
+ 23) 6003 ********************  dougcurrie
  ```
