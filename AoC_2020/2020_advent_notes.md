@@ -229,6 +229,15 @@ instead of the image. The same indexing code worked for both steps, rotating the
 tiles and rotating the monster. Lots of index calculations, but the convolution
 went fast, and the answer was right fist try
 
+### Day 21 ###
+
+Nim seemed particularly well suited to this challenge, which was mostly about
+set intersection and counting and sorting. If only I had better familiarity with
+the libraries I wouldn't have had some much trouble... mixing up [] versus () for
+various set and table functions, for example, or knowing exactly what the options
+for `strip` are called. Nevertheless, I got this done in under 2.5 hours *while*
+participating in three > half-hour meetings!
+
 ---
 
 ## Stats
@@ -240,6 +249,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 21   09:59:33   8434      0   10:17:13   8213      0
  20   16:13:43  10539      0   18:36:51   5783      0
  19   10:40:52   9410      0   12:43:20   7483      0
  18   09:10:57  12338      0   09:44:55  10604      0
@@ -282,4 +292,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  31) 5277 ******************  dougcurrie
  25) 5638 *******************  dougcurrie
  23) 6003 ********************  dougcurrie
+ 22) 6358 *********************  dougcurrie
  ```
