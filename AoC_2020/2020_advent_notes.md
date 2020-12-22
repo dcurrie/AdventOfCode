@@ -213,7 +213,7 @@ Later... I tried putting in the recursive rules as specified, undoing my "loop
 unrolling" that was intended to limit recursion, and lo and behold, it's 10x
 faster! The faster solution is called p2x.nim
 
-### Day 20: ###
+### Day 20: Jurassic Jigsaw ###
 
 This was a bit humiliating. It took hours for me to make progress on part 1 on
 this busy Sunday. It took a while for me to code all the possible rotations, all
@@ -229,7 +229,7 @@ instead of the image. The same indexing code worked for both steps, rotating the
 tiles and rotating the monster. Lots of index calculations, but the convolution
 went fast, and the answer was right fist try
 
-### Day 21 ###
+### Day 21: Allergen Assessment ###
 
 Nim seemed particularly well suited to this challenge, which was mostly about
 set intersection and counting and sorting. If only I had better familiarity with
@@ -237,6 +237,19 @@ the libraries I wouldn't have had some much trouble... mixing up [] versus () fo
 various set and table functions, for example, or knowing exactly what the options
 for `strip` are called. Nevertheless, I got this done in under 2.5 hours *while*
 participating in three > half-hour meetings!
+
+### Day 22: Crab Combat ###
+
+Part 1 came easily, and it's the first time I used Nim's deques so I had to look
+up the API. I coded Part 2 quickly, broken up by a business meeting, which was
+my undoing. I misread the instructions. This seems to be a common problem for
+today. After a couple hours and trying a few optimizations with memoization, I
+finally went to reddit to see what I did wrong. I had passed the entire remaining
+hand to the recursive step instead of the specified "(the quantity of cards
+copied is equal to the number on the card they drew to trigger the sub-game)."
+It is unfortunate that the incorrect code gives the right answer for the example.
+Once I followed the instructions correctly the code ran quickly and gave the
+right answer for both the example and my input.
 
 ---
 
@@ -249,6 +262,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 22   08:14:41  10941      0   11:53:47   9452      0
  21   09:59:33   8434      0   10:17:13   8213      0
  20   16:13:43  10539      0   18:36:51   5783      0
  19   10:40:52   9410      0   12:43:20   7483      0
@@ -293,4 +307,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  25) 5638 *******************  dougcurrie
  23) 6003 ********************  dougcurrie
  22) 6358 *********************  dougcurrie
+ 21) 6713 **********************  dougcurrie
  ```
