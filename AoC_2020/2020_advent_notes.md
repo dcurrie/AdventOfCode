@@ -251,6 +251,23 @@ It is unfortunate that the incorrect code gives the right answer for the example
 Once I followed the instructions correctly the code ran quickly and gave the
 right answer for both the example and my input.
 
+### Day 23: Crab Cups ###
+
+Part 1 was pretty easy with string slicing and concatenating. Of course, I was
+not familiar with the Nim syntax, so it took a half hour to get right. It was
+immediately clear that strings would not be the right approach to Part 2. I
+spent a little while looking for a pattern that could be exploited to simplify
+part 2 based on the sequential numbers, and failed miserably. So, I turned to
+Reddit for a hint. I saw this one from [u/3urny](https://www.reddit.com/user/3urny/)
+"use a flat integer array of ints, length 1M, where at index at n you put which
+number comes after n in the ring." It is very clever, and I implemented that in
+Nim. Of course, it took a while to fix the off-by-one errors: crabs use 1-based
+counting, Nim 0-based. A bit of complexity also came from trying to accommodate
+the examples from part 1, which do not extend after the first 9 cups, so fixing
+up the wrap-around is different for the two modes. I made the array of `int32`
+rather than `int` to reduce memory consumption... it was a waste of time as it
+turns out since `part2` runs in a blink of the eye.
+
 ---
 
 ## Stats
@@ -262,6 +279,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 23   09:01:10   8957      0   11:48:06   6309      0
  22   08:14:41  10941      0   11:53:47   9452      0
  21   09:59:33   8434      0   10:17:13   8213      0
  20   16:13:43  10539      0   18:36:51   5783      0
@@ -308,4 +326,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  23) 6003 ********************  dougcurrie
  22) 6358 *********************  dougcurrie
  21) 6713 **********************  dougcurrie
+ 19) 7080 ***********************  dougcurrie
  ```
