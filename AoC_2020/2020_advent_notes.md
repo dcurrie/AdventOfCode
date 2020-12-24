@@ -268,6 +268,17 @@ up the wrap-around is different for the two modes. I made the array of `int32`
 rather than `int` to reduce memory consumption... it was a waste of time as it
 turns out since `part2` runs in a blink of the eye.
 
+
+### Day 24: Lobby Layout ###
+
+I drew a few hex tiles on paper, and decided on a Complex number to represent
+position as I did on Day 12. This time, I wanted to hash them, and learned that
+Nim has no default `hash` function for Complex, so I had to make one, slowing
+me down. Once that was set aside, part 1 was almost trivial. I realized in part
+2 that a 1/0 int was a better choice of value rather than bool for black/white
+to make counting easier. That, and the use of a work list made part 2 pretty
+straightforward. All worked first time once over the Nim syntax hurdles.
+
 ---
 
 ## Stats
@@ -279,6 +290,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 24   08:40:40   8803      0   09:10:58   7582      0
  23   09:01:10   8957      0   11:48:06   6309      0
  22   08:14:41  10941      0   11:53:47   9452      0
  21   09:59:33   8434      0   10:17:13   8213      0
@@ -327,4 +339,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  22) 6358 *********************  dougcurrie
  21) 6713 **********************  dougcurrie
  19) 7080 ***********************  dougcurrie
+ 18) 7443 ************************  dougcurrie
  ```
