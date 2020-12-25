@@ -227,7 +227,12 @@ indexing algorithm for all the rotations so I would not have to make all the
 images. I made one stitched together image, and then rotated the sea monster
 instead of the image. The same indexing code worked for both steps, rotating the
 tiles and rotating the monster. Lots of index calculations, but the convolution
-went fast, and the answer was right fist try
+went fast, and the answer was right fist try.
+
+Later, reviewing others' solutions... about rotations: use flipH, flipV, and Rot
+bits to describe image rotations instead of the *ad hoc* mess I invented (which
+in retrospect was a good decision and far better approach than manipulating the
+images!).
 
 ### Day 21: Allergen Assessment ###
 
@@ -279,6 +284,28 @@ me down. Once that was set aside, part 1 was almost trivial. I realized in part
 to make counting easier. That, and the use of a work list made part 2 pretty
 straightforward. All worked first time once over the Nim syntax hurdles.
 
+### Day 25: Combo Breaker ###
+
+Simple modular exponentiation calculation... the hardest part was reading the
+explanation to see what was being asked! I copied and translated the Wikipedia
+"right-to-left binary method" pseudocode to Nim, and then realized it probably
+wasn't even needed unless you were going for a top 100 spot, which of course I
+wasn't starting at 9:30 AM EST!
+
+### Retrospective ###
+
+A fun but relatively easy year. The only challenges where I needed a hint were
+Day 13 where I saw "Chinese Remainder Theorem" on reddit and all became clear,
+and Day 23 part 2 where, had I persisted, I would have solved it inefficiently,
+but the hint on reddit to use an array of next keys was very clever. The most
+interesting thing I learned is about rotations: use flipH, flipV, and Rot bits
+to describe image rotations instead of the *ad hoc* mess I invented... though I
+am pleased that I used coordinate transforms rather than image manipulations
+to solve Day 20, Jurassic Jigsaw.
+
+I "invented" what I now know is a "double-width" horizontal layout for hexagons
+on Day 24: Lobby Layout. The definitive reference for hexagons is at [RedBlobGames](https://www.redblobgames.com/grids/hexagons/)
+
 ---
 
 ## Stats
@@ -290,6 +317,7 @@ These are your personal leaderboard statistics. Rank is your position on that le
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 25   10:00:03   9114      0   10:00:49   6893      0
  24   08:40:40   8803      0   09:10:58   7582      0
  23   09:01:10   8957      0   11:48:06   6309      0
  22   08:14:41  10941      0   11:53:47   9452      0
@@ -340,4 +368,5 @@ Day       Time   Rank  Score       Time   Rank  Score
  21) 6713 **********************  dougcurrie
  19) 7080 ***********************  dougcurrie
  18) 7443 ************************  dougcurrie
+ 17) 7805 *************************  dougcurrie
  ```
